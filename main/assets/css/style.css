@@ -12346,6 +12346,12 @@ nav .header__item a.btn {
   color: #fff;
 }
 
+.hero--about {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+}
+
 .intro h1, .intro h3 {
   color: #fff;
 }
