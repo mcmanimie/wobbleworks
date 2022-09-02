@@ -22,6 +22,8 @@
   @include fontSmooth;
   transition: all 0.2s ease;
   will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
 
   &:focus-visible {
     box-shadow: 0 0 0 2px var(--color-bg), 0px 0px 0px 4px alpha(var(--color-contrast-higher), 0.15);

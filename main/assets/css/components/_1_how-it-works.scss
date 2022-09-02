@@ -1,0 +1,130 @@
+@use '../base' as *;
+
+/* --------------------------------
+
+File#: _1_how-it-works
+Title: How It Works
+Descr: A list of steps showing how a product works
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --hiw-counter-size: 2rem;
+  --hiw-counter-font-size: 1rem;
+  --hiw-line-stroke-width: 2px;
+  --hiw-line-border-radius: 1em;
+  --hiw-items-gap-x: var(--space-md); /* gap between counter and content */
+  --hiw-items-gap-y: var(--space-xxl); /* gap between list items */
+
+  @include breakpoint(md) {
+    --hiw-counter-size: 4rem;
+    --hiw-counter-font-size: 1rem;
+  }
+}
+
+.hiw-list {
+  counter-reset: hiw-list-items;
+}
+
+.hiw-list__item {
+  position: relative;
+  counter-increment: hiw-list-items;
+
+  &:not(:last-child) {
+    padding-bottom: calc(var(--hiw-items-gap-y)/2);
+    margin-bottom: calc(var(--hiw-items-gap-y)/2);
+  }
+
+  &::before, &::after { /* dashed line */
+    content: '';
+    position: absolute;
+    width: calc(50% - var(--hiw-counter-size)/2 + var(--hiw-line-stroke-width)/2);
+  }
+
+  &::before {
+    top: calc(var(--hiw-counter-size) + var(--hiw-line-stroke-width));
+    height: calc(100% - var(--hiw-counter-size) - var(--hiw-line-stroke-width));
+    border-bottom: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+  }
+
+  &::after {
+    top: calc(100% - var(--hiw-line-stroke-width));
+    height: calc(var(--hiw-items-gap-y)/2);
+    border-top: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+
+  }
+
+  &:nth-child(2n + 1) {
+    padding-right: calc(var(--hiw-counter-size)/2);
+
+    &::before {
+      left: calc(var(--hiw-counter-size)/2 - var(--hiw-line-stroke-width)/2);
+      border-left: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+      border-bottom-left-radius: var(--hiw-line-border-radius);
+    }
+
+    &::after {
+      left: 50%;
+      border-top-right-radius: var(--hiw-line-border-radius);
+      border-right: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+    }
+  }
+
+  &:nth-child(2n) {
+    padding-left: calc(var(--hiw-counter-size)/2);
+
+    .hiw-list__item-inner {
+      flex-direction: row-reverse;
+    }
+
+    &::before {
+      border-right: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+      right: calc(var(--hiw-counter-size)/2 - var(--hiw-line-stroke-width)/2);
+      border-bottom-right-radius: var(--hiw-line-border-radius);
+    }
+
+    &::after {
+      right: 50%;
+      border-top-left-radius: var(--hiw-line-border-radius);
+      border-left: var(--hiw-line-stroke-width) dashed alpha(var(--color-primary), 0.25);
+    }
+  }
+
+  &:last-child {
+    &::before, &::after {
+      display: none;
+    }
+  }
+}
+
+.hiw-list__item-inner {
+  display: flex;
+  gap: var(--hiw-items-gap-x);
+}
+
+.hiw-list__counter {
+  width: var(--hiw-counter-size);
+  height: var(--hiw-counter-size);
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: var(--hiw-line-stroke-width) solid alpha(var(--color-primary), 0.25);
+
+  color: var(--color-primary);
+  font-size: var(--hiw-counter-font-size);
+
+  &::before {
+    /*content: counter(hiw-list-items);*/
+  }
+}
+
+@include breakpoint(md) {
+  .hiw-list__item:nth-child(2n) .hiw-list__content {
+    flex-direction: row-reverse;
+  }
+}

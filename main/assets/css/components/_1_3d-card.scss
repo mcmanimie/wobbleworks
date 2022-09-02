@@ -1,0 +1,29 @@
+@use '../base' as *;
+
+/* --------------------------------
+
+File#: _1_3d-card
+Title: 3D Card
+Descr: Card element floating in a 3D space
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.td-card {}
+
+.td-card-link {
+  color: var(--color-contrast-higher);
+  text-decoration: none;
+
+  /* filling effect */
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, var(--color-contrast-higher) 50%, alpha(var(--color-contrast-higher), 0.2) 50%);
+  background-size: 200% 2px;
+  background-position: 100% calc(100% - 0.05em);
+
+  transition: background-position .3s var(--ease-in-out);
+
+  &:hover {
+    background-position: 0% calc(100% - 0.05em);
+  }
+}

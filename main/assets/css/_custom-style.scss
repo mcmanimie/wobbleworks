@@ -14,3 +14,130 @@
 @use 'custom-style/util';
 
 /*! purgecss start ignore */
+
+$color-theme-blue: #53abc8;
+$color-theme-lightblue: #e8f4f6;
+$color-theme-lightyellow: #f5e9ca;
+$color-theme-lightgray: #eee;
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  color: $color-theme-blue;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5em;
+  color: hsla(var(--color-contrast-medium-h),
+  var(--color-contrast-medium-s),
+  var(--color-contrast-medium-l),
+  var(--color-o, 1));
+}
+
+
+
+// nav
+
+.header__logo a {
+
+  text-transform: uppercase;
+  color: #777;
+  letter-spacing: 3px;
+
+  b { font-weight: 900; }
+  span {
+    font-size: .5em;
+    letter-spacing: 1px;
+    margin-left: 3px;
+  }
+
+}
+
+nav {
+
+  .header__item {
+
+    a {
+      color: #777;
+      text-transform: uppercase;
+      font-size: .9rem;
+      font-weight: 900;
+    }
+
+    a.btn { color: #fff; }
+
+  }
+
+}
+
+
+.intro {
+  h1, h3 { color: #fff; }
+  h3 { font-weight: 100; }
+}
+
+
+.row-brands {
+
+  /*.row-brands-3d img { background-color: $color-theme-lightblue; }
+  .row-brands-pika img { background-color: hsl(43deg 68% 95%); }
+  .row-brands-scrib img { background-color: $color-theme-lightgray; } */
+
+}
+
+
+// brands
+
+.hiw-list__item {
+
+  .hiw-logo {
+    max-width: 200px;
+    padding-bottom: 25px;
+    margin: 0;
+  }
+
+}
+
+
+footer {
+
+  color: #aaa;
+  background: #eee;
+
+  .footer-brand {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+
+    b { font-weight: 800; }
+    span { font-size: .6em; }
+
+  }
+
+  .footer-terms {
+    margin-top: 15px;
+    span {
+      opacity: .3;
+      position: relative;
+      top: 2px;
+    }
+
+  }
+
+  p, a {
+    font-size: .7em;
+    line-height: 1.4em;
+  }
+
+  p { color: #999; }
+  a { font-weight: 800; }
+
+}
