@@ -12304,6 +12304,26 @@ mark {
   box-shadow: inset 0px 0px 0px 1px hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0), 0px 0px 0px 2px var(--color-error), var(--shadow-sm);
 }
 
+@font-face {
+  font-family: "Gotham Rounded";
+  font-weight: 900;
+  src: url("../fonts/GothamRoundedBold.woff") format("woff"), url("../fonts/GothamRoundedBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Gotham Rounded";
+  font-weight: 500;
+  src: url("../fonts/GothamRoundedMedium.woff") format("woff"), url("../fonts/GothamRoundedMedium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Gotham Rounded";
+  font-weight: 300;
+  src: url("../fonts/GothamRoundedBook.svg") format("svg"), url("../fonts/GothamRoundedBook.woff") format("woff"), url("../fonts/GothamRoundedBook.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Gotham Rounded";
+  font-weight: 100;
+  src: url("../fonts/GothamRoundedLight.woff2") format("woff2"), url("../fonts/GothamRoundedLight.woff") format("woff"), url("../fonts/GothamRoundedLight.ttf") format("ttf");
+}
 /*! purgecss start ignore */
 a {
   text-decoration: none;
@@ -12320,6 +12340,7 @@ h1, h2, h3, h4 {
 p {
   line-height: 1.5em;
   color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), var(--color-o, 1));
+  font-weight: 100;
 }
 
 .header__logo a {
@@ -12351,6 +12372,12 @@ nav .header__item a.btn {
   background-size: contain;
   background-position: top right;
 }
+@media screen and (max-width: 500px) {
+  .hero--about {
+    background-image: url("/assets/img/bg-pen-fade.jpg") !important;
+    background-position: 40px 0px;
+  }
+}
 
 .intro h1, .intro h3 {
   color: #fff;
@@ -12370,7 +12397,59 @@ nav .header__item a.btn {
   padding-bottom: 25px;
   margin: 0;
 }
+@media screen and (max-width: 500px) {
+  .hiw-list__item .hiw-logo {
+    max-width: 150px;
+  }
+}
 
+.contact-pika {
+  width: 90%;
+}
+@media screen and (max-width: 500px) {
+  .contact-pika {
+    width: 50%;
+  }
+}
+
+.contact-v3 .form-label {
+  color: #53abc8;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.contact-bar {
+  font-weight: 100;
+  color: hsl(195deg, 52%, 90%);
+  line-height: 1.3em;
+}
+@media screen and (min-width: 500px) {
+  .contact-bar {
+    font-size: 0.8em;
+    line-height: 1.3em;
+  }
+}
+.contact-bar .address-block {
+  margin-bottom: 45px;
+}
+.contact-bar h5 {
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: table;
+  position: relative;
+  left: -9px;
+  background-color: hsl(195deg, 52%, 45%);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.contact-bar a {
+  color: #fff;
+}
 footer {
   color: #aaa;
   background: #eee;
@@ -12428,6 +12507,220 @@ Usage: codyhouse.co/license
   background-position: 0% calc(100% - 0.05em);
 }
 
+/* --------------------------------
+
+File#: _1_bg-gradients
+Title: Background Gradients
+Descr: Customizable background gradients
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.bg-gradient-1, .bg-gradient-2, .bg-gradient-3, .bg-gradient-4, .bg-gradient-5 {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-1[data-bg-animate=on], .bg-gradient-2[data-bg-animate=on], .bg-gradient-3[data-bg-animate=on], .bg-gradient-4[data-bg-animate=on], .bg-gradient-5[data-bg-animate=on] {
+    will-change: background-position;
+  }
+}
+
+.bg-gradient-1 {
+  background-color: #b4e0ef;
+  background-image: radial-gradient(ellipse at 90% 30%, #b4e0ef 20%, rgba(180, 224, 239, 0) 50%), radial-gradient(ellipse at 70% 0%, #e9f3f3 0%, rgba(233, 243, 243, 0) 50%), radial-gradient(ellipse at 20% 10%, #fff 10%, rgba(255, 255, 255, 0) 70%), radial-gradient(ellipse at 50% 100%, #e9f3f3 0%, rgba(233, 243, 243, 0) 50%);
+  background-size: 200% 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-1[data-bg-animate=on] {
+    background-size: 400% 200%;
+    background-position: 0% 0%;
+    -webkit-animation: bg-gradient-anim-1 30s linear infinite;
+            animation: bg-gradient-anim-1 30s linear infinite;
+  }
+}
+
+@-webkit-keyframes bg-gradient-anim-1 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes bg-gradient-anim-1 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+.bg-gradient-2 {
+  background-color: #FFFCF2;
+  background-image: radial-gradient(ellipse at 10% 20%, #E980FC 0%, rgba(233, 128, 252, 0) 40%), radial-gradient(ellipse at 50% 0%, #FFFCF2 25%, rgba(255, 252, 242, 0) 75%), radial-gradient(ellipse at 100% 100%, #BCB6FF 35%, rgba(188, 182, 255, 0) 70%), radial-gradient(ellipse at 50% 100%, #FFFCF2 20%, rgba(255, 252, 242, 0) 70%);
+  background-size: 120% 200%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-2[data-bg-animate=on] {
+    background-size: 240% 400%;
+    background-position: 0% 0%;
+    -webkit-animation: bg-gradient-anim-2 30s linear infinite;
+            animation: bg-gradient-anim-2 30s linear infinite;
+  }
+}
+
+@-webkit-keyframes bg-gradient-anim-2 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes bg-gradient-anim-2 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+.bg-gradient-3 {
+  background-color: #30C5FF;
+  background-image: radial-gradient(ellipse at 25% 90%, #5C946E 10%, rgba(92, 148, 110, 0) 70%), radial-gradient(ellipse at 55% 90%, #FFFCF2 0%, rgba(255, 252, 242, 0) 70%), radial-gradient(ellipse at 100% 100%, #EB5E28 5%, rgba(235, 94, 40, 0) 60%), radial-gradient(ellipse at 0% 0%, #5C946E 15%, rgba(92, 148, 110, 0) 50%), radial-gradient(ellipse at 100% 0%, #FFFCF2 30%, rgba(255, 252, 242, 0) 70%);
+  background-size: 100% 140%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-3[data-bg-animate=on] {
+    background-size: 200% 280%;
+    background-position: 50% 0%;
+    -webkit-animation: bg-gradient-anim-3 30s linear infinite;
+            animation: bg-gradient-anim-3 30s linear infinite;
+  }
+}
+
+@-webkit-keyframes bg-gradient-anim-3 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 100% 0%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes bg-gradient-anim-3 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 100% 0%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+}
+.bg-gradient-4 {
+  background-color: #1D1128;
+  background-image: radial-gradient(ellipse at 70% 0%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 30%), radial-gradient(circle at 90% 0%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 30%), radial-gradient(ellipse at 0% 0%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%), radial-gradient(circle at 30% 100%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 40%), radial-gradient(ellipse at 10% 100%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 40%), radial-gradient(ellipse at 100% 100%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-4[data-bg-animate=on] {
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    -webkit-animation: bg-gradient-anim-4 30s linear infinite;
+            animation: bg-gradient-anim-4 30s linear infinite;
+  }
+}
+
+@-webkit-keyframes bg-gradient-anim-4 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes bg-gradient-anim-4 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+.bg-gradient-5 {
+  background-color: #e6e5f7;
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(225, 91, 151, 0.35) 0%, rgba(225, 91, 151, 0) 30%), radial-gradient(ellipse at 100% 0%, rgba(132, 19, 134, 0.32) 0%, rgba(132, 19, 134, 0) 60%);
+  background-size: 200% 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bg-gradient-5[data-bg-animate=on] {
+    background-size: 400% 200%;
+    background-position: 0% 0%;
+    -webkit-animation: bg-gradient-anim-5 20s linear infinite;
+            animation: bg-gradient-anim-5 20s linear infinite;
+  }
+}
+
+@-webkit-keyframes bg-gradient-anim-5 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  40%, 60% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes bg-gradient-anim-5 {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  40%, 60% {
+    background-position: 100% 0%;
+  }
+}
 /* --------------------------------
 
 File#: _1_how-it-works
@@ -12527,6 +12820,11 @@ Usage: codyhouse.co/license
   border: var(--hiw-line-stroke-width) solid hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.25);
   color: var(--color-primary);
   font-size: var(--hiw-counter-font-size);
+}
+@media screen and (max-width: 500px) {
+  .hiw-list__counter {
+    border-color: transparent;
+  }
 }
 .hiw-list__counter::before {
   /*content: counter(hiw-list-items);*/
@@ -12861,6 +13159,215 @@ Usage: codyhouse.co/license
 }
 /* --------------------------------
 
+File#: _1_scribble-text-decoration
+Title: Scribble Text Decoration
+Descr: A collection of animated scribble text decorations
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.scribble-text-fx {
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.scribble-text-fx__label {
+  position: relative;
+  z-index: 2;
+}
+
+.scribble-text-fx__decoration {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  max-width: none;
+}
+
+.scribble-text-fx--v1 .scribble-text-fx__decoration {
+  top: -6px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 12px);
+}
+.scribble-text-fx--v1 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  stroke-dashoffset: 367;
+  stroke-dasharray: 367;
+  transition: stroke-dashoffset 0.5s var(--ease-in-out);
+}
+.scribble-text-fx--v1:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+
+.scribble-text-fx--v2 .scribble-text-fx__decoration {
+  bottom: -5px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 8px;
+}
+.scribble-text-fx--v2 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  stroke-dashoffset: 155;
+  stroke-dasharray: 155;
+  transition: stroke-dashoffset 0.3s var(--ease-in-out);
+}
+.scribble-text-fx--v2:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+
+.scribble-text-fx--v3 .scribble-text-fx__decoration {
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+  width: calc(100% + 30px);
+  height: 8px;
+}
+.scribble-text-fx--v3 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  transition: stroke-dashoffset 0.2s var(--ease-in-out);
+}
+.scribble-text-fx--v3 .scribble-text-fx__decoration > *:first-child {
+  stroke-dashoffset: 149;
+  stroke-dasharray: 149;
+}
+.scribble-text-fx--v3 .scribble-text-fx__decoration > *:last-child {
+  stroke-dashoffset: 147;
+  stroke-dasharray: 147;
+  transition-delay: 0.2s;
+}
+.scribble-text-fx--v3:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+
+.scribble-text-fx--v4 .scribble-text-fx__decoration {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -46px;
+  width: 40px;
+  height: auto;
+}
+.scribble-text-fx--v4 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  transition: stroke-dashoffset 0.2s;
+}
+.scribble-text-fx--v4 .scribble-text-fx__decoration > *:first-child {
+  stroke-dashoffset: 33;
+  stroke-dasharray: 33;
+  transition-delay: 0.2s;
+}
+.scribble-text-fx--v4 .scribble-text-fx__decoration > *:last-child {
+  stroke-dashoffset: 28;
+  stroke-dasharray: 28;
+  transition-delay: 0s;
+}
+.scribble-text-fx--v4:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+.scribble-text-fx--v4:hover .scribble-text-fx__decoration > *:first-child {
+  transition-delay: 0s;
+}
+.scribble-text-fx--v4:hover .scribble-text-fx__decoration > *:last-child {
+  transition-delay: 0.2s;
+}
+
+.scribble-text-fx--v5 .scribble-text-fx__decoration {
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: auto;
+  transform: translate(50%, -50%);
+}
+.scribble-text-fx--v5 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  stroke-dashoffset: 16;
+  stroke-dasharray: 16;
+  transition: stroke-dashoffset 0.3s;
+}
+.scribble-text-fx--v5:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+
+.scribble-text-fx--v6 .scribble-text-fx__decoration {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: auto;
+}
+.scribble-text-fx--v6 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  transition: stroke-dashoffset 0.2s var(--ease-in-out);
+}
+.scribble-text-fx--v6 .scribble-text-fx__decoration > *:first-child {
+  stroke-dashoffset: 79;
+  stroke-dasharray: 79;
+  transition-delay: 0.2s;
+}
+.scribble-text-fx--v6 .scribble-text-fx__decoration > *:last-child {
+  stroke-dashoffset: 73;
+  stroke-dasharray: 73;
+  transition-delay: 0s;
+}
+.scribble-text-fx--v6:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+.scribble-text-fx--v6:hover .scribble-text-fx__decoration > *:first-child {
+  transition-delay: 0s;
+}
+.scribble-text-fx--v6:hover .scribble-text-fx__decoration > *:last-child {
+  transition-delay: 0.2s;
+}
+
+.scribble-text-fx--v7 .scribble-text-fx__decoration {
+  bottom: -5px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 10px;
+}
+.scribble-text-fx--v7 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  stroke-dashoffset: 160;
+  stroke-dasharray: 160;
+  transition: stroke-dashoffset 0.4s var(--ease-in-out);
+}
+.scribble-text-fx--v7:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+
+.scribble-text-fx--v8 .scribble-text-fx__decoration {
+  top: 50%;
+  transform: translateY(-50%);
+  right: -34px;
+  width: 29px;
+  height: auto;
+}
+.scribble-text-fx--v8 .scribble-text-fx__decoration > * {
+  stroke-width: 2px;
+  transition: stroke-dashoffset 0.2s;
+}
+.scribble-text-fx--v8 .scribble-text-fx__decoration > *:first-child {
+  stroke-dashoffset: 79;
+  stroke-dasharray: 79;
+  transition-delay: 0.2s;
+}
+.scribble-text-fx--v8 .scribble-text-fx__decoration > *:last-child {
+  stroke-dashoffset: 18;
+  stroke-dasharray: 18;
+  transition-delay: 0s;
+}
+.scribble-text-fx--v8:hover .scribble-text-fx__decoration > * {
+  stroke-dashoffset: 0;
+}
+.scribble-text-fx--v8:hover .scribble-text-fx__decoration > *:first-child {
+  transition-delay: 0s;
+}
+.scribble-text-fx--v8:hover .scribble-text-fx__decoration > *:last-child {
+  transition-delay: 0.2s;
+}
+
+/* --------------------------------
+
 File#: _1_section-divider
 Title: Section divider
 Descr: A collection of SVG section dividers.
@@ -12914,4 +13421,52 @@ Usage: codyhouse.co/license
   max-width: none;
   width: 102%;
   left: -1%;
+}
+
+/* --------------------------------
+
+File#: _1_text-background-effects
+Title: Text Background Effects
+Descr: A collection of text backgrounds animated on hover
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.text-bg-fx {
+  background-repeat: no-repeat;
+  will-change: background-size;
+  transition: background-size 0.3s var(--ease-in-out);
+}
+.text-bg-fx:hover {
+  background-size: 100% 100%;
+}
+
+.text-bg-fx--scale-x {
+  padding: var(--space-xxxxs) 0;
+  background-image: linear-gradient(hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2), hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2));
+  background-size: 0% 100%;
+}
+
+.text-bg-fx--scale-y {
+  text-decoration: none;
+  background-image: linear-gradient(hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2), hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2));
+  background-size: 100% 2px;
+  background-position: center bottom;
+}
+
+.text-bg-fx--underline,
+.text-bg-fx--underline-bold {
+  text-decoration: none;
+  background-size: 0% 100%;
+}
+
+.text-bg-fx--underline { /* text underline size = 1px */
+  background-image: linear-gradient(transparent calc(100% - 3px), currentColor calc(100% - 3px), currentColor calc(100% - 2px), transparent 2px);
+}
+
+.text-bg-fx--underline-bold {
+  background-image: linear-gradient(transparent 50%, hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2) 50%);
+}
+
+.text-bg-fx--text-shadow { /* you can use this with the .text-bg-fx--underline effect */
+  text-shadow: 1.5px 1px var(--color-bg), -1.5px 1px var(--color-bg), 0px 1px var(--color-bg);
 }

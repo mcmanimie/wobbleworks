@@ -118,6 +118,10 @@ Usage: codyhouse.co/license
   color: var(--color-primary);
   font-size: var(--hiw-counter-font-size);
 
+  @media screen and (max-width: 500px) {
+    border-color: transparent;
+  }
+
   &::before {
     /*content: counter(hiw-list-items);*/
   }

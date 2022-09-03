@@ -12,6 +12,7 @@
 @use 'custom-style/buttons';
 @use 'custom-style/forms';
 @use 'custom-style/util';
+@use 'custom-style/fonts';
 
 /*! purgecss start ignore */
 
@@ -39,6 +40,7 @@ p {
   var(--color-contrast-medium-s),
   var(--color-contrast-medium-l),
   var(--color-o, 1));
+  font-weight: 100;
 }
 
 
@@ -80,7 +82,12 @@ nav {
 .hero--about {
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: top right; 
+  background-position: top right;
+
+  @media screen and (max-width: 500px) {
+    background-image: url("/assets/img/bg-pen-fade.jpg") !important;
+    background-position: 40px 0px;
+  }
 }
 
 
@@ -107,6 +114,70 @@ nav {
     max-width: 200px;
     padding-bottom: 25px;
     margin: 0;
+
+    @media screen and (max-width: 500px) {
+      max-width: 150px;
+    }
+  }
+
+}
+
+
+
+// contact bar
+
+.contact-pika {
+
+  width: 90%;
+
+  @media screen and (max-width: 500px) {
+    width: 50%;
+  }
+
+}
+
+.contact-v3 .form-label {
+  color: $color-theme-blue;
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 10px;
+}
+
+.contact-bar {
+
+  font-weight: 100;
+  color: hsl(195deg, 52%, 90%);
+  line-height: 1.3em;
+
+  @media screen and (min-width: 500px) {
+    font-size: 0.8em;
+    line-height: 1.3em;
+  }
+
+  .address-block {
+    margin-bottom: 45px;
+  }
+
+  h5 {
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: table;
+    position: relative;
+    left: -9px;
+    background-color: hsl(195deg 52% 45%);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: .9em;
+  }
+
+  a {
+    color: #fff;
+    &:hover {
+
+    }
   }
 
 }
