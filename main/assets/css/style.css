@@ -11795,7 +11795,7 @@ html:not(.js) .no-js\:is-hidden {
     display: none !important;
   }
 }
-:root {
+:root, [data-theme=default] {
   --color-primary-darker: hsl(195, 52%, 43%);
   --color-primary-darker-h: 195;
   --color-primary-darker-s: 52%;
@@ -11816,26 +11816,26 @@ html:not(.js) .no-js\:is-hidden {
   --color-primary-lighter-h: 195;
   --color-primary-lighter-s: 52%;
   --color-primary-lighter-l: 67%;
-  --color-accent-darker: hsl(49, 100%, 42%);
-  --color-accent-darker-h: 49;
-  --color-accent-darker-s: 100%;
+  --color-accent-darker: hsl(71, 58%, 42%);
+  --color-accent-darker-h: 71;
+  --color-accent-darker-s: 58%;
   --color-accent-darker-l: 42%;
-  --color-accent-dark: hsl(49, 100%, 52%);
-  --color-accent-dark-h: 49;
-  --color-accent-dark-s: 100%;
-  --color-accent-dark-l: 52%;
-  --color-accent: hsl(49, 100%, 62%);
-  --color-accent-h: 49;
-  --color-accent-s: 100%;
-  --color-accent-l: 62%;
-  --color-accent-light: hsl(49, 100%, 72%);
-  --color-accent-light-h: 49;
-  --color-accent-light-s: 100%;
-  --color-accent-light-l: 72%;
-  --color-accent-lighter: hsl(49, 100%, 82%);
-  --color-accent-lighter-h: 49;
-  --color-accent-lighter-s: 100%;
-  --color-accent-lighter-l: 82%;
+  --color-accent-dark: hsl(71, 58%, 48%);
+  --color-accent-dark-h: 71;
+  --color-accent-dark-s: 58%;
+  --color-accent-dark-l: 48%;
+  --color-accent: hsl(71, 58%, 54%);
+  --color-accent-h: 71;
+  --color-accent-s: 58%;
+  --color-accent-l: 54%;
+  --color-accent-light: hsl(71, 58%, 60%);
+  --color-accent-light-h: 71;
+  --color-accent-light-s: 58%;
+  --color-accent-light-l: 60%;
+  --color-accent-lighter: hsl(71, 58%, 66%);
+  --color-accent-lighter-h: 71;
+  --color-accent-lighter-s: 58%;
+  --color-accent-lighter-l: 66%;
   --color-secondary-darker: hsl(180, 29%, 81%);
   --color-secondary-darker-h: 180;
   --color-secondary-darker-s: 29%;
@@ -12442,7 +12442,7 @@ nav .header__item a.btn {
   display: table;
   position: relative;
   left: -9px;
-  background-color: hsl(195deg, 52%, 45%);
+  background-color: hsl(195deg, 52%, 50%);
   padding: 5px 10px;
   border-radius: 3px;
   font-size: 0.9em;
