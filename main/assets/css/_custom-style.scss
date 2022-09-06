@@ -184,7 +184,14 @@ nav {
 }
 
 .brand-box {
-  background: url("/assets/img/bg-3d-pen.jpg") !important;
+
+  &.brand-box--3d {
+    background-image: url("/assets/img/bg-3d-pen.jpg") !important;
+  }
+  &.brand-box--pika {
+    background-image: url("/assets/img/bg-pika.jpg") !important;
+  }
+
   background-repeat: no-repeat !important;
   background-position: 600px 0 !important;
   background-size: 550px !important;
@@ -200,7 +207,14 @@ nav {
   }
 
   @media screen and (max-width: 500px) {
-    background: url('/assets/img/bg-3d-pen-fade.jpg') !important;
+
+    &.brand-box--3d {
+      background-image: url("/assets/img/bg-3d-pen-fade.jpg") !important;
+    }
+    &.brand-box--pika {
+      background-image: url("/assets/img/bg-pika-fade.jpg") !important;
+    }
+
     background-position: 31vw 0 !important;
     background-size: 360px !important;
     background-repeat: no-repeat !important;
@@ -234,19 +248,16 @@ nav {
 }
 
 .socials__btns {
-
   margin-top: 30px;
-
   li {
     list-style: none;
   }
-
 }
 
 .brand-box-copy {
   position: absolute;
   z-index: 2;
-  width: 50%;
+  width: 40%;
   color: #fff;
   padding: 3em;
   font-size: .85em;
@@ -261,6 +272,8 @@ nav {
     color: #fff;
     margin-bottom: 20px;
   }
+
+  &.brand-box-copy--dark p { color: #333; }
 
   @media screen and (max-width: 500px) {
     width: 80%;
@@ -278,6 +291,13 @@ nav {
     p { display: none; }
   }
 
+}
+
+.brand-box--pika .brand-box-copy img {
+  width: 220px;
+  @media screen and (max-width: 500px) {
+    width: 170px;
+  }
 }
 
 
