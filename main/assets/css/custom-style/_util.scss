@@ -7,15 +7,17 @@
 // --------------------------------
 
 // 👇 your custom utility class
-// .my-util-class { 
+// .my-util-class {
 //   property: value;
 // }
 
 // 👇 (optional) create responsive variations - edit only [my-util-class, property, value]
-// @each $breakpoint, $value in $breakpoints { 
+// @each $breakpoint, $value in $breakpoints {
 //   @include breakpoint(#{$breakpoint}) {
 //     .my-util-class\@#{$breakpoint} {
 //       property: value;
 //     }
 //   }
 // }
+
+.aspect-ratio-20\:9 { --aspect-ratio: calc(20/9); }

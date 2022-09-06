@@ -12304,6 +12304,10 @@ mark {
   box-shadow: inset 0px 0px 0px 1px hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 0), 0px 0px 0px 2px var(--color-error), var(--shadow-sm);
 }
 
+.aspect-ratio-20\:9 {
+  --aspect-ratio: calc(20/9);
+}
+
 @font-face {
   font-family: "Gotham Rounded";
   font-weight: 900;
@@ -12450,6 +12454,90 @@ nav .header__item a.btn {
 .contact-bar a {
   color: #fff;
 }
+.brand-box {
+  background: url("/assets/img/bg-3d-pen.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-position: 600px 0 !important;
+  background-size: 550px !important;
+}
+.brand-box .shadow-md {
+  border-radius: 30px;
+}
+@media screen and (min-width: 500px) {
+  .brand-box .scroll-fx {
+    --aspect-ratio: calc(24/9);
+  }
+}
+@media screen and (max-width: 500px) {
+  .brand-box {
+    background: url("/assets/img/bg-3d-pen-fade.jpg") !important;
+    background-position: 31vw 0 !important;
+    background-size: 360px !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 25px;
+  }
+  .brand-box .shadow-md {
+    border-radius: 10px;
+  }
+}
+
+.brand-box-top img {
+  width: 250px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 500px) {
+  .brand-box-top img {
+    width: 170px;
+    margin-bottom: 25px;
+    margin-top: 20px !important;
+  }
+  .brand-box-top img p {
+    color: #000;
+  }
+}
+
+.socials__btns {
+  margin-top: 30px;
+}
+.socials__btns li {
+  list-style: none;
+}
+
+.brand-box-copy {
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  color: #fff;
+  padding: 3em;
+  font-size: 0.85em;
+}
+.brand-box-copy img {
+  width: 170px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.brand-box-copy p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 500px) {
+  .brand-box-copy {
+    width: 80%;
+    padding: 1.5em;
+    font-size: 0.8em;
+  }
+  .brand-box-copy img {
+    width: 90px;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .brand-box-copy p {
+    display: none;
+  }
+}
+
 footer {
   color: #aaa;
   background: #eee;
@@ -13368,6 +13456,179 @@ Usage: codyhouse.co/license
 
 /* --------------------------------
 
+File#: _1_scrolling-animations
+Title: Scrolling Animations
+Descr: Scrolling animations plugin
+Usage: codyhouse.co/license
+
+-------------------------------- */
+:root {
+  --scroll-fx-translate-x: 0;
+  --scroll-fx-translate-y: 0;
+  --scroll-fx-translate-z: 0;
+  --scroll-fx-rotate-x: 0;
+  --scroll-fx-rotate-y: 0;
+  --scroll-fx-rotate-z: 0;
+  --scroll-fx-skew-x: 0;
+  --scroll-fx-skew-y: 0;
+  --scroll-fx-scale-x: 1;
+  --scroll-fx-scale-y: 1;
+  --scroll-fx-opacity: 1;
+  --scroll-fx-stroke-dashoffset: 0;
+}
+
+.scroll-fx {
+  transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+  opacity: var(--scroll-fx-opacity) !important;
+  stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+}
+
+.scroll-fx.scroll-fx--theme-transition,
+.scroll-fx.scroll-fx--theme-transition > * {
+  transition: 0.3s;
+}
+
+@media (min-width: 32rem) {
+  .scroll-fx\@xs {
+    transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+    opacity: var(--scroll-fx-opacity) !important;
+    stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+  }
+  .scroll-fx\@xs.scroll-fx--theme-transition,
+.scroll-fx\@xs.scroll-fx--theme-transition > * {
+    transition: 0.3s;
+  }
+}
+@media (min-width: 48rem) {
+  .scroll-fx\@sm {
+    transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+    opacity: var(--scroll-fx-opacity) !important;
+    stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+  }
+  .scroll-fx\@sm.scroll-fx--theme-transition,
+.scroll-fx\@sm.scroll-fx--theme-transition > * {
+    transition: 0.3s;
+  }
+}
+@media (min-width: 64rem) {
+  .scroll-fx\@md {
+    transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+    opacity: var(--scroll-fx-opacity) !important;
+    stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+  }
+  .scroll-fx\@md.scroll-fx--theme-transition,
+.scroll-fx\@md.scroll-fx--theme-transition > * {
+    transition: 0.3s;
+  }
+}
+@media (min-width: 80rem) {
+  .scroll-fx\@lg {
+    transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+    opacity: var(--scroll-fx-opacity) !important;
+    stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+  }
+  .scroll-fx\@lg.scroll-fx--theme-transition,
+.scroll-fx\@lg.scroll-fx--theme-transition > * {
+    transition: 0.3s;
+  }
+}
+@media (min-width: 90rem) {
+  .scroll-fx\@xl {
+    transform: translate3d(var(--scroll-fx-translate-x), var(--scroll-fx-translate-y), var(--scroll-fx-translate-z)) rotateX(var(--scroll-fx-rotate-x)) rotateY(var(--scroll-fx-rotate-y)) rotateZ(var(--scroll-fx-rotate-z)) skewX(var(--scroll-fx-skew-x)) skewY(var(--scroll-fx-skew-y)) scaleX(var(--scroll-fx-scale-x)) scaleY(var(--scroll-fx-scale-y)) !important;
+    opacity: var(--scroll-fx-opacity) !important;
+    stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
+  }
+  .scroll-fx\@xl.scroll-fx--theme-transition,
+.scroll-fx\@xl.scroll-fx--theme-transition > * {
+    transition: 0.3s;
+  }
+}
+@supports (--css: variables) {
+  [data-theme=demo-dark] {
+    --color-primary-darker: hsl(319, 78%, 49%);
+    --color-primary-darker-h: 319;
+    --color-primary-darker-s: 78%;
+    --color-primary-darker-l: 49%;
+    --color-primary-dark: hsl(319, 78%, 58%);
+    --color-primary-dark-h: 319;
+    --color-primary-dark-s: 78%;
+    --color-primary-dark-l: 58%;
+    --color-primary: hsl(319, 78%, 66%);
+    --color-primary-h: 319;
+    --color-primary-s: 78%;
+    --color-primary-l: 66%;
+    --color-primary-light: hsl(319, 78%, 72%);
+    --color-primary-light-h: 319;
+    --color-primary-light-s: 78%;
+    --color-primary-light-l: 72%;
+    --color-primary-lighter: hsl(319, 78%, 79%);
+    --color-primary-lighter-h: 319;
+    --color-primary-lighter-s: 78%;
+    --color-primary-lighter-l: 79%;
+    --color-accent-darker: hsl(250, 79%, 56%);
+    --color-accent-darker-h: 250;
+    --color-accent-darker-s: 79%;
+    --color-accent-darker-l: 56%;
+    --color-accent-dark: hsl(250, 79%, 60%);
+    --color-accent-dark-h: 250;
+    --color-accent-dark-s: 79%;
+    --color-accent-dark-l: 60%;
+    --color-accent: hsl(250, 79%, 65%);
+    --color-accent-h: 250;
+    --color-accent-s: 79%;
+    --color-accent-l: 65%;
+    --color-accent-light: hsl(250, 79%, 71%);
+    --color-accent-light-h: 250;
+    --color-accent-light-s: 79%;
+    --color-accent-light-l: 71%;
+    --color-accent-lighter: hsl(250, 79%, 76%);
+    --color-accent-lighter-h: 250;
+    --color-accent-lighter-s: 79%;
+    --color-accent-lighter-l: 76%;
+    --color-bg: hsl(240, 8%, 12%);
+    --color-bg-h: 240;
+    --color-bg-s: 8%;
+    --color-bg-l: 12%;
+    --color-contrast-lower: hsl(240, 6%, 15%);
+    --color-contrast-lower-h: 240;
+    --color-contrast-lower-s: 6%;
+    --color-contrast-lower-l: 15%;
+    --color-contrast-low: hsl(240, 5%, 24%);
+    --color-contrast-low-h: 240;
+    --color-contrast-low-s: 5%;
+    --color-contrast-low-l: 24%;
+    --color-contrast-medium: hsl(240, 3%, 55%);
+    --color-contrast-medium-h: 240;
+    --color-contrast-medium-s: 3%;
+    --color-contrast-medium-l: 55%;
+    --color-contrast-high: hsl(240, 10%, 86%);
+    --color-contrast-high-h: 240;
+    --color-contrast-high-s: 10%;
+    --color-contrast-high-l: 86%;
+    --color-contrast-higher: hsl(240, 47%, 97%);
+    --color-contrast-higher-h: 240;
+    --color-contrast-higher-s: 47%;
+    --color-contrast-higher-l: 97%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+.demo-scroll-fx-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.demo-scroll-fx-grid > *:nth-child(1) {
+  grid-column: 1/4;
+  grid-row: 1/-1;
+}
+.demo-scroll-fx-grid > *:nth-child(2) {
+  grid-column: 3/7;
+  grid-row: 2/5;
+}
+
+/* --------------------------------
+
 File#: _1_section-divider
 Title: Section divider
 Descr: A collection of SVG section dividers.
@@ -13425,6 +13686,38 @@ Usage: codyhouse.co/license
 
 /* --------------------------------
 
+File#: _1_socials
+Title: Socials
+Descr: Section with links to social media accounts
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.socials__btns a {
+  --size: 2.5em;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-contrast-high);
+  transition: 0.3s;
+}
+.socials__btns a .icon {
+  font-size: 1.25em; /* icon size */
+  color: var(--color-bg); /* icon color */
+  transition: color 0.3s, transform 0.3s var(--ease-out-back);
+}
+.socials__btns a:hover {
+  background-color: var(--color-primary);
+}
+.socials__btns a:hover .icon {
+  transform: scale(1.2);
+  color: var(--color-white);
+}
+
+/* --------------------------------
+
 File#: _1_text-background-effects
 Title: Text Background Effects
 Descr: A collection of text backgrounds animated on hover
@@ -13470,3 +13763,12 @@ Usage: codyhouse.co/license
 .text-bg-fx--text-shadow { /* you can use this with the .text-bg-fx--underline effect */
   text-shadow: 1.5px 1px var(--color-bg), -1.5px 1px var(--color-bg), 0px 1px var(--color-bg);
 }
+
+/* --------------------------------
+
+File#: _2_cards-scrolling-effects
+Title: Cards Scrolling Effects
+Descr: A gallery of cards/images that animate on scroll
+Usage: codyhouse.co/license
+
+-------------------------------- */
