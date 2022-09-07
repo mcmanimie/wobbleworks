@@ -12530,6 +12530,7 @@ nav .header__item a.btn {
 .brand-box-copy p {
   color: #fff;
   margin-bottom: 20px;
+  font-weight: 300;
 }
 .brand-box-copy.brand-box-copy--dark p {
   color: #333;
@@ -12556,7 +12557,7 @@ nav .header__item a.btn {
 }
 @media screen and (max-width: 500px) {
   .brand-box--pika .brand-box-copy img {
-    width: 170px;
+    width: 140px;
   }
 }
 

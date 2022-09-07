@@ -271,6 +271,7 @@ nav {
   p {
     color: #fff;
     margin-bottom: 20px;
+    font-weight: 300; 
   }
 
   &.brand-box-copy--dark p { color: #333; }
@@ -296,7 +297,7 @@ nav {
 .brand-box--pika .brand-box-copy img {
   width: 220px;
   @media screen and (max-width: 500px) {
-    width: 170px;
+    width: 140px;
   }
 }
 
