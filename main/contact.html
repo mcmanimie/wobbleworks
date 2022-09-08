@@ -54,20 +54,23 @@
         </div>
 
         <div class="col-6@md">
-          <form>
+          <form method="POST" data-netlify="true">
+
+            <input type="hidden" name="subject" value="WobbleWorks Web Contact Form Submission" />
+            
             <div class="margin-bottom-sm">
               <label class="form-label margin-bottom-xxs" for="contactName">Name</label>
-              <input class="form-control width-100%" type="text" name="contactName" id="contactName" required>
+              <input class="form-control width-100%" type="text" name="name" id="contactName" required>
             </div>
 
             <div class="margin-bottom-sm">
               <label class="form-label margin-bottom-xxs" for="contactEmail">Email</label>
-              <input class="form-control width-100%" type="email" name="contactEmail" id="contactEmail">
+              <input class="form-control width-100%" type="email" name="email" id="contactEmail">
             </div>
 
             <div class="margin-bottom-sm">
               <label class="form-label margin-bottom-xxs" for="contactMessage">Message</label>
-              <textarea class="form-control width-100%" rows="9" name="contactMessage" id="contactMessage"></textarea>
+              <textarea class="form-control width-100%" rows="9" name="message" id="contactMessage"></textarea>
             </div>
 
             <div class="text-right">
