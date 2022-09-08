@@ -12413,6 +12413,15 @@ nav .header__item a.btn {
   .row-brands-pika img { background-color: hsl(43deg 68% 95%); }
   .row-brands-scrib img { background-color: $color-theme-lightgray; } */
 }
+.row-brands .row-brands-arrow {
+  width: 100px;
+  margin-left: 100px;
+}
+@media screen and (max-width: 500px) {
+  .row-brands .row-brands-arrow {
+    display: none;
+  }
+}
 @media screen and (max-width: 500px) {
   .row-brands {
     text-align: center;
