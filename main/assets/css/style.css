@@ -12491,7 +12491,7 @@ nav .header__item a.btn {
     background-image: url("/assets/img/bg-pika-fade.jpg") !important;
   }
   .brand-box.brand-box--scrib {
-    background-image: url("/assets/img/bg-scrib-fade.jpg") !important;
+    background-image: none !important;
     background-position: 210px -20px !important;
   }
   .brand-box .shadow-md {
