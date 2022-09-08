@@ -54,10 +54,16 @@
         </div>
 
         <div class="col-6@md">
-          <form method="POST" data-netlify="true">
+          <form method="POST" data-netlify="true" netlify-honeypot="bot-field">
 
             <input type="hidden" name="subject" value="WobbleWorks Web Contact Form Submission" />
-            
+
+            <p class="hidden">
+              <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+              </label>
+            </p>
+
             <div class="margin-bottom-sm">
               <label class="form-label margin-bottom-xxs" for="contactName">Name</label>
               <input class="form-control width-100%" type="text" name="name" id="contactName" required>
