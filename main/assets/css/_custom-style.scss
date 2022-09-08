@@ -117,6 +117,17 @@ nav {
   .row-brands-pika img { background-color: hsl(43deg 68% 95%); }
   .row-brands-scrib img { background-color: $color-theme-lightgray; } */
 
+  @media screen and (max-width: 500px) {
+
+    text-align: center;
+    h2 {
+      margin-bottom: none;
+      br {
+        display: none;
+      }
+    }
+
+  }
 }
 
 

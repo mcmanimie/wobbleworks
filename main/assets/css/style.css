@@ -12413,6 +12413,17 @@ nav .header__item a.btn {
   .row-brands-pika img { background-color: hsl(43deg 68% 95%); }
   .row-brands-scrib img { background-color: $color-theme-lightgray; } */
 }
+@media screen and (max-width: 500px) {
+  .row-brands {
+    text-align: center;
+  }
+  .row-brands h2 {
+    margin-bottom: none;
+  }
+  .row-brands h2 br {
+    display: none;
+  }
+}
 
 .hiw-list__item .hiw-logo {
   max-width: 200px;
