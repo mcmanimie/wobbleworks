@@ -80,6 +80,12 @@ nav {
 
 }
 
+.header__nav--is-visible .header__nav--btn { margin-top: 13px; }
+
+.bg-transparent nav:not(.header__nav--is-visible) .header__item a { color: #fff; }
+.bg-transparent:not(.header--expanded) .header__logo a { color: #fff !important; }
+
+
 .hero--about {
   background-repeat: no-repeat;
   background-size: contain;
@@ -95,6 +101,13 @@ nav {
 .intro {
   h1, h3 { color: #fff; }
   h3 { font-weight: 100; }
+
+  background-color: #000;
+
+  .hero-video-bg__video {
+      opacity: .8;
+  }
+
 }
 
 

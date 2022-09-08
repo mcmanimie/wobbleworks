@@ -12371,6 +12371,18 @@ nav .header__item a.btn {
   color: #fff;
 }
 
+.header__nav--is-visible .header__nav--btn {
+  margin-top: 13px;
+}
+
+.bg-transparent nav:not(.header__nav--is-visible) .header__item a {
+  color: #fff;
+}
+
+.bg-transparent:not(.header--expanded) .header__logo a {
+  color: #fff !important;
+}
+
 .hero--about {
   background-repeat: no-repeat;
   background-size: contain;
@@ -12383,11 +12395,17 @@ nav .header__item a.btn {
   }
 }
 
+.intro {
+  background-color: #000;
+}
 .intro h1, .intro h3 {
   color: #fff;
 }
 .intro h3 {
   font-weight: 100;
+}
+.intro .hero-video-bg__video {
+  opacity: 0.8;
 }
 
 .row-brands {
@@ -13816,3 +13834,87 @@ Descr: A gallery of cards/images that animate on scroll
 Usage: codyhouse.co/license
 
 -------------------------------- */
+/*@use '_1_modal-window.scss' as *;
+@use '_2_modal-video.scss' as *;*/
+/* --------------------------------
+
+File#: _3_hero-video-bg
+Title: Hero Background Video
+Descr: Hero section variation w/ background video
+Usage: codyhouse.co/license
+
+-------------------------------- */
+.hero-video-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero-video-bg__video video {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  max-width: none;
+}
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .hero-video-bg__video video {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+@supports ((-o-object-fit: cover) or (object-fit: cover)) and (-ms-ime-align: auto) {
+  .hero-video-bg__video video {
+    height: auto;
+    width: auto;
+  }
+}
+.hero-video-bg__video img {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video-bg__video video {
+    visibility: hidden;
+  }
+  .hero-video-bg__video img {
+    display: block;
+    position: absolute;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.hero-video-bg__play-btn {
+  --btn-size: 80px;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  display: inline-flex;
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 0.85);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.hero-video-bg__play-btn .icon {
+  display: block;
+  margin: auto;
+  color: var(--color-bg);
+  font-size: 32px;
+  transition: transform 0.3s var(--ease-out-back);
+}
+.hero-video-bg__play-btn:hover {
+  background-color: hsla(var(--color-contrast-higher-h), var(--color-contrast-higher-s), var(--color-contrast-higher-l), 1);
+}
+.hero-video-bg__play-btn:hover .icon {
+  transform: scale(1.2);
+}
