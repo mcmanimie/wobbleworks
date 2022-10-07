@@ -57,6 +57,7 @@ gulp.task('scripts', function() {
     stream: true
   }));
 });
+
 // This task is used to reload the project whan changes are made to a html/scss/js file.
 gulp.task('browserSync', gulp.series(function (done) {
   browserSync.init({
@@ -158,3 +159,4 @@ function moveContent() {
     });
   });
 };
+

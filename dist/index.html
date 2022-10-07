@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>document.getElementsByTagName("html")[0].className += " js";</script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
   <title>WobbleWorks Inc | Home</title>
 </head>
 <body>
@@ -12,7 +14,7 @@
   <header class="header position-absolute js-header bg-transparent">
     <div class="header__container container max-width-lg">
       <div class="header__logo">
-        <a href="#0">
+        <a href="/">
           <b>Wobble</b>Works<span>Inc.</span>
         </a>
       </div>
@@ -36,8 +38,11 @@
     </div>
   </header>
 
-  <section class="intro" style="background-image: url('assets/img/bg-temp.jpg');">
+  <section class="intro hero-video-bg position-relative has-section-divider-bottom">
+
     <div class="container max-width-adaptive-lg padding-y-xxxl text-center align-middle">
+
+      <div class="position-relative z-index-2 text-center">
 
         <!--<div class="text-sm opacity-60% margin-bottom-xxs">This is a Label</div>-->
 
@@ -51,35 +56,48 @@
           <a href="#0" class="btn btn--primary">Download</a>
           <a href="#0" class="color-inherit">Learn more</a>-->
 
+        </div>
+
       </div>
     </div>
+
+    <figure class="hero-video-bg__video" aria-hidden="true">
+       <img src="https://3doodlerstart.com/img/3ds_hero_frame.jpg" alt="Video Preview">
+       <video autoplay loop muted playsInline src="https://3doodlerstart.com/img/3ds_hero_sm.mp4"></video>
+    </figure>
+
+    <div class="section-divider z-index-2">
+      <svg viewBox="0 0 1920 60" aria-hidden="true"><path fill="#fff" d="M-153.5,85.5a4002.033,4002.033,0,0,1,658-71c262.854-6.5,431.675,15.372,600,27,257.356,17.779,624.828,19.31,1089-58v102Z"/></svg>
+    </div>
+
+
   </section>
 
 
 
 
   <section class="row-brands">
-    <div class="container max-width-lg padding-y-lg">
+    <div class="container max-width-lg padding-y-lg padding-y-sm@md">
 
       <div class="grid items-center">
 
-        <div class="col-3">
-            <h3>Our</br> Brands</h3>
+        <div class="col-12 col-3@sm padding-bottom-sm">
+            <h2>Our</br> Brands</h2>
             <img class="row-brands-arrow" src="assets/img/arrow.jpg" />
         </div>
-        <div class="col-3 padding-md row-brands-3d">
+        <div class="col-4 col-3@sm padding-xxs padding-md@sm row-brands-3d">
           <figure class="td-card js-td-card">
-            <a href="#"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-3d-fat.png" alt="Image description"></a>
+            <a href="/3doodler"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-3d-fat.png" alt="Image description"></a>
           </figure>
         </div>
-        <div class="col-3 padding-md row-brands-pika">
+        <div class="col-4 col-3@sm padding-xxs padding-md@sm row-brands-pika">
           <figure class="td-card js-td-card">
-            <a href="#"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-pika-fat.png" alt="Image description"></a>
+            <a href="/pika3d"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-pika-fat.png" alt="Image description"></a>
           </figure>
         </div>
-        <div class="col-3 padding-md row-brands-scrib">
+        <div class="col-4 col-3@sm padding-xxs padding-md@sm row-brands-scrib">
           <figure class="td-card js-td-card">
-            <a href="#"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-scrib-fat.png" alt="Image description"></a>
+            <a href="/scrib3d"><img class="block width-100% shadow-md radius-lg" src="assets/img/logo-scrib-fat.png" alt="Image description"></a>
           </figure>
         </div>
 
@@ -94,30 +112,29 @@
   <footer class="has-section-divider-top">
 
     <div class="section-divider">
-        <svg viewBox="0 0 1920 60" aria-hidden="true"><path fill="#fff" d="M-153.5,85.5a4002.033,4002.033,0,0,1,658-71c262.854-6.5,431.675,15.372,600,27,257.356,17.779,624.828,19.31,1089-58v102Z"/></svg>
-      </div>
-    </section>
+      <svg viewBox="0 0 1920 60" aria-hidden="true"><path fill="#fff" d="M-153.5,85.5a4002.033,4002.033,0,0,1,658-71c262.854-6.5,431.675,15.372,600,27,257.356,17.779,624.828,19.31,1089-58v102Z"/></svg>
+    </div>
 
     <div class="container max-width-lg padding-y-xl">
       <div class="grid">
 
         <div class="col-8">
           <div class="footer-brand"><b>Wobble</b>Works <span>Inc.</span></div>
-          <p>“3Doodler”, “SCRIB3D” and “PiKA3D” are marks of WobbleWorks, Inc. Copyright © WobbleWorks,Inc. All rights reserved.
+          <p>“3Doodler”, “PiKA3D" and SCRIB3D”  are marks of WobbleWorks, Inc. Copyright © WobbleWorks,Inc. All rights reserved.
             All other product names/marks of others are the property of their respective owners. Patents and/or Patents Pending.</p>
 
           <div class="footer-terms">
-            <a href="#">Terms</a> <span>|</span> <a href="#">Privacy</a>
+            <a href="/terms">Terms</a> <span>|</span> <a href="/privacy">Privacy</a>
           </div>
 
         </div>
         <div class="col-4 text-right">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Brands</a></li>
-            <li><a href="#">Location</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/brands">Our Brands</a></li>
+            <li><a href="/locations">Locations</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
 
