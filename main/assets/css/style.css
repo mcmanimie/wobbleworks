@@ -2450,8 +2450,8 @@ img, video, svg {
 }
 
 [data-theme] {
-  background-color: var(--color-bg, hsl(0deg, 0%, 100%));
-  color: var(--color-contrast-high, hsl(210deg, 7%, 21%));
+  background-color: var(--color-bg, hsl(0, 0%, 100%));
+  color: var(--color-contrast-high, hsl(210, 7%, 21%));
 }
 
 :root {
@@ -2510,12 +2510,12 @@ img, video, svg {
 body {
   font-size: var(--text-base-size, 1rem);
   font-family: var(--font-primary, sans-serif);
-  color: var(--color-contrast-high, hsl(210deg, 7%, 21%));
+  color: var(--color-contrast-high, hsl(210, 7%, 21%));
   font-weight: var(--body-font-weight, normal);
 }
 
 h1, h2, h3, h4 {
-  color: var(--color-contrast-higher, hsl(204deg, 28%, 7%));
+  color: var(--color-contrast-higher, hsl(204, 28%, 7%));
   line-height: var(--heading-line-height, 1.2);
   font-weight: var(--heading-font-weight, 700);
 }
@@ -2541,7 +2541,7 @@ small {
 }
 
 a, .link {
-  color: var(--color-primary, hsl(250deg, 84%, 54%));
+  color: var(--color-primary, hsl(250, 84%, 54%));
   text-decoration: underline;
 }
 
@@ -2614,11 +2614,11 @@ u {
 
 @media (min-width: 48rem) {
   .text-component__block--left,
-.text-component__block--right {
+  .text-component__block--right {
     width: 45%;
   }
   .text-component__block--left img,
-.text-component__block--right img {
+  .text-component__block--right img {
     width: 100%;
   }
   .text-component__block--left {
@@ -2708,17 +2708,7 @@ u {
 }
 
 .icon--is-spinning {
-  -webkit-animation: icon-spin 1s infinite linear;
-          animation: icon-spin 1s infinite linear;
-}
-
-@-webkit-keyframes icon-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: icon-spin 1s infinite linear;
 }
 
 @keyframes icon-spin {
@@ -2775,7 +2765,7 @@ u {
 }
 
 .form-legend {
-  color: var(--color-contrast-higher, hsl(204deg, 28%, 7%));
+  color: var(--color-contrast-higher, hsl(204, 28%, 7%));
   line-height: var(--heading-line-height, 1.2);
   font-size: var(--text-md, 1.125rem);
   margin-bottom: var(--space-sm);
@@ -12468,7 +12458,7 @@ nav .header__item a.btn {
 
 .contact-bar {
   font-weight: 100;
-  color: hsl(195deg, 52%, 90%);
+  color: hsl(195, 52%, 90%);
   line-height: 1.3em;
 }
 @media screen and (min-width: 500px) {
@@ -12488,7 +12478,7 @@ nav .header__item a.btn {
   display: table;
   position: relative;
   left: -9px;
-  background-color: hsl(195deg, 52%, 50%);
+  background-color: hsl(195, 52%, 50%);
   padding: 5px 10px;
   border-radius: 3px;
   font-size: 0.9em;
@@ -12659,6 +12649,19 @@ footer a {
   font-weight: 800;
 }
 
+.hero--patents p {
+  color: #bbb;
+}
+
+.hero--patents strong,
+.hero--patents .leader {
+  color: #777;
+}
+
+.hero--patents .leader {
+  font-size: 1.3em;
+}
+
 /* --------------------------------
 
 File#: _1_3d-card
@@ -12708,23 +12711,7 @@ Usage: codyhouse.co/license
   .bg-gradient-1[data-bg-animate=on] {
     background-size: 400% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-1 30s linear infinite;
-            animation: bg-gradient-anim-1 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-1 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-1 30s linear infinite;
   }
 }
 
@@ -12751,23 +12738,7 @@ Usage: codyhouse.co/license
   .bg-gradient-2[data-bg-animate=on] {
     background-size: 240% 400%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-2 30s linear infinite;
-            animation: bg-gradient-anim-2 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-2 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-2 30s linear infinite;
   }
 }
 
@@ -12794,20 +12765,7 @@ Usage: codyhouse.co/license
   .bg-gradient-3[data-bg-animate=on] {
     background-size: 200% 280%;
     background-position: 50% 0%;
-    -webkit-animation: bg-gradient-anim-3 30s linear infinite;
-            animation: bg-gradient-anim-3 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-3 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  33% {
-    background-position: 100% 0%;
-  }
-  66% {
-    background-position: 100% 100%;
+    animation: bg-gradient-anim-3 30s linear infinite;
   }
 }
 
@@ -12824,29 +12782,13 @@ Usage: codyhouse.co/license
 }
 .bg-gradient-4 {
   background-color: #1D1128;
-  background-image: radial-gradient(ellipse at 70% 0%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 30%), radial-gradient(circle at 90% 0%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 30%), radial-gradient(ellipse at 0% 0%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%), radial-gradient(circle at 30% 100%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 40%), radial-gradient(ellipse at 10% 100%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 40%), radial-gradient(ellipse at 100% 100%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%);
+  background-image: radial-gradient(ellipse at 70% 0%, hsla(257, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 30%), radial-gradient(circle at 90% 0%, hsla(347, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 30%), radial-gradient(ellipse at 0% 0%, hsla(175, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%), radial-gradient(circle at 30% 100%, hsla(257, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 40%), radial-gradient(ellipse at 10% 100%, hsla(347, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 40%), radial-gradient(ellipse at 100% 100%, hsla(175, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%);
 }
 @media (prefers-reduced-motion: no-preference) {
   .bg-gradient-4[data-bg-animate=on] {
     background-size: 200% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-4 30s linear infinite;
-            animation: bg-gradient-anim-4 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-4 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-4 30s linear infinite;
   }
 }
 
@@ -12873,17 +12815,7 @@ Usage: codyhouse.co/license
   .bg-gradient-5[data-bg-animate=on] {
     background-size: 400% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-5 20s linear infinite;
-            animation: bg-gradient-anim-5 20s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-5 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  40%, 60% {
-    background-position: 100% 0%;
+    animation: bg-gradient-anim-5 20s linear infinite;
   }
 }
 
@@ -13581,7 +13513,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@xs.scroll-fx--theme-transition,
-.scroll-fx\@xs.scroll-fx--theme-transition > * {
+  .scroll-fx\@xs.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -13592,7 +13524,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@sm.scroll-fx--theme-transition,
-.scroll-fx\@sm.scroll-fx--theme-transition > * {
+  .scroll-fx\@sm.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -13603,7 +13535,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@md.scroll-fx--theme-transition,
-.scroll-fx\@md.scroll-fx--theme-transition > * {
+  .scroll-fx\@md.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -13614,7 +13546,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@lg.scroll-fx--theme-transition,
-.scroll-fx\@lg.scroll-fx--theme-transition > * {
+  .scroll-fx\@lg.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -13625,7 +13557,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@xl.scroll-fx--theme-transition,
-.scroll-fx\@xl.scroll-fx--theme-transition > * {
+  .scroll-fx\@xl.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
