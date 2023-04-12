@@ -12631,6 +12631,7 @@ footer .footer-brand span {
   font-size: 0.6em;
 }
 footer .footer-terms {
+  display: none;
   margin-top: 15px;
 }
 footer .footer-terms span {
