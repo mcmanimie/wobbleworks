@@ -140,8 +140,9 @@
 html, body, div, span, object,
 h1, h2, h3, h5, p,
 a, img, s,
-small, var,
-b, i, ol, ul, li, form, label,
+small, strong, var,
+b, i,
+dl, ol, ul, li, form, label,
 figure, footer, header,
 menu, nav, section, video {
   margin: 0;
@@ -197,8 +198,8 @@ img, video, svg {
 }
 
 [data-theme] {
-  background-color: var(--color-bg, hsl(0deg, 0%, 100%));
-  color: var(--color-contrast-high, hsl(210deg, 7%, 21%));
+  background-color: var(--color-bg, hsl(0, 0%, 100%));
+  color: var(--color-contrast-high, hsl(210, 7%, 21%));
 }
 
 :root {
@@ -257,12 +258,12 @@ img, video, svg {
 body {
   font-size: var(--text-base-size, 1rem);
   font-family: var(--font-primary, sans-serif);
-  color: var(--color-contrast-high, hsl(210deg, 7%, 21%));
+  color: var(--color-contrast-high, hsl(210, 7%, 21%));
   font-weight: var(--body-font-weight, normal);
 }
 
 h1, h2, h3 {
-  color: var(--color-contrast-higher, hsl(204deg, 28%, 7%));
+  color: var(--color-contrast-higher, hsl(204, 28%, 7%));
   line-height: var(--heading-line-height, 1.2);
   font-weight: var(--heading-font-weight, 700);
 }
@@ -284,8 +285,12 @@ small {
 }
 
 a, .link {
-  color: var(--color-primary, hsl(250deg, 84%, 54%));
+  color: var(--color-primary, hsl(250, 84%, 54%));
   text-decoration: underline;
+}
+
+strong {
+  font-weight: bold;
 }
 
 s {
@@ -350,12 +355,6 @@ s {
   line-height: 1;
   flex-shrink: 0;
   max-width: initial;
-}
-
-@-webkit-keyframes icon-spin {
-  0% {
-    transform: rotate(0deg);
-  }
 }
 
 @keyframes icon-spin {
@@ -455,6 +454,10 @@ s {
 
 .block {
   display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .margin-top-md {
@@ -1244,7 +1247,7 @@ nav .header__item a.btn {
 
 .contact-bar {
   font-weight: 100;
-  color: hsl(195deg, 52%, 90%);
+  color: hsl(195, 52%, 90%);
   line-height: 1.3em;
 }
 @media screen and (min-width: 500px) {
@@ -1264,7 +1267,7 @@ nav .header__item a.btn {
   display: table;
   position: relative;
   left: -9px;
-  background-color: hsl(195deg, 52%, 50%);
+  background-color: hsl(195, 52%, 50%);
   padding: 5px 10px;
   border-radius: 3px;
   font-size: 0.9em;
@@ -1417,6 +1420,7 @@ footer .footer-brand span {
   font-size: 0.6em;
 }
 footer .footer-terms {
+  display: none;
   margin-top: 15px;
 }
 footer .footer-terms span {
@@ -1433,6 +1437,19 @@ footer p {
 }
 footer a {
   font-weight: 800;
+}
+
+.hero--patents p {
+  color: #bbb;
+}
+
+.hero--patents strong,
+.hero--patents .leader {
+  color: #777;
+}
+
+.hero--patents .leader {
+  font-size: 1.3em;
 }
 
 /* --------------------------------
@@ -1484,23 +1501,7 @@ Usage: codyhouse.co/license
   .bg-gradient-1[data-bg-animate=on] {
     background-size: 400% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-1 30s linear infinite;
-            animation: bg-gradient-anim-1 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-1 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-1 30s linear infinite;
   }
 }
 
@@ -1527,23 +1528,7 @@ Usage: codyhouse.co/license
   .bg-gradient-2[data-bg-animate=on] {
     background-size: 240% 400%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-2 30s linear infinite;
-            animation: bg-gradient-anim-2 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-2 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-2 30s linear infinite;
   }
 }
 
@@ -1570,20 +1555,7 @@ Usage: codyhouse.co/license
   .bg-gradient-3[data-bg-animate=on] {
     background-size: 200% 280%;
     background-position: 50% 0%;
-    -webkit-animation: bg-gradient-anim-3 30s linear infinite;
-            animation: bg-gradient-anim-3 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-3 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  33% {
-    background-position: 100% 0%;
-  }
-  66% {
-    background-position: 100% 100%;
+    animation: bg-gradient-anim-3 30s linear infinite;
   }
 }
 
@@ -1600,29 +1572,13 @@ Usage: codyhouse.co/license
 }
 .bg-gradient-4 {
   background-color: #1D1128;
-  background-image: radial-gradient(ellipse at 70% 0%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 30%), radial-gradient(circle at 90% 0%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 30%), radial-gradient(ellipse at 0% 0%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%), radial-gradient(circle at 30% 100%, hsla(257deg, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 40%), radial-gradient(ellipse at 10% 100%, hsla(347deg, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 40%), radial-gradient(ellipse at 100% 100%, hsla(175deg, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%);
+  background-image: radial-gradient(ellipse at 70% 0%, hsla(257, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 30%), radial-gradient(circle at 90% 0%, hsla(347, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 30%), radial-gradient(ellipse at 0% 0%, hsla(175, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%), radial-gradient(circle at 30% 100%, hsla(257, 62%, 32%, 0.7) 0%, rgba(60, 31, 132, 0) 40%), radial-gradient(ellipse at 10% 100%, hsla(347, 83%, 60%, 0.5) 0%, rgba(238, 68, 105, 0) 40%), radial-gradient(ellipse at 100% 100%, hsla(175, 51%, 48%, 0.15) 0%, rgba(60, 185, 174, 0) 40%);
 }
 @media (prefers-reduced-motion: no-preference) {
   .bg-gradient-4[data-bg-animate=on] {
     background-size: 200% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-4 30s linear infinite;
-            animation: bg-gradient-anim-4 30s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-4 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
+    animation: bg-gradient-anim-4 30s linear infinite;
   }
 }
 
@@ -1649,17 +1605,7 @@ Usage: codyhouse.co/license
   .bg-gradient-5[data-bg-animate=on] {
     background-size: 400% 200%;
     background-position: 0% 0%;
-    -webkit-animation: bg-gradient-anim-5 20s linear infinite;
-            animation: bg-gradient-anim-5 20s linear infinite;
-  }
-}
-
-@-webkit-keyframes bg-gradient-anim-5 {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  40%, 60% {
-    background-position: 100% 0%;
+    animation: bg-gradient-anim-5 20s linear infinite;
   }
 }
 
@@ -2109,6 +2055,270 @@ Usage: codyhouse.co/license
 }
 /* --------------------------------
 
+File#: _1_read-more
+Title: Read More
+Descr: A truncated paragraph with the option of reading more content
+Usage: codyhouse.co/license
+
+-------------------------------- */
+/* reset */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: system-ui, sans-serif;
+  color: hsl(230, 7%, 23%);
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: hsl(230, 13%, 9%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.0736rem;
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+ol, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  background-color: transparent;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+a {
+  color: hsl(250, 84%, 54%);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 64rem) {
+  body {
+    font-size: 1.25rem;
+  }
+  h1 {
+    font-size: 3.051rem;
+  }
+  h2 {
+    font-size: 2.44rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5625rem;
+  }
+}
+/* variables */
+:root {
+  /* colors */
+  --rh9-color-primary-hsl: 250, 84%, 54%;
+  --rh9-color-bg-hsl: 0, 0%, 100%;
+  --rh9-color-contrast-high-hsl: 230, 7%, 23%;
+  --rh9-color-contrast-higher-hsl: 230, 13%, 9%;
+  --rh9-color-accent-hsl: 342, 89%, 48%;
+  --rh9-color-contrast-lower-hsl: 240, 4%, 85%;
+  /* spacing */
+  --rh9-space-md: 1.25rem;
+  --rh9-space-sm: 0.75rem;
+  --rh9-space-xs: 0.5rem;
+  /* typography */
+  --rh9-text-sm: 0.833rem;
+}
+
+@media (min-width: 64rem) {
+  :root {
+    /* spacing */
+    --rh9-space-md: 2rem;
+    --rh9-space-sm: 1.125rem;
+    --rh9-space-xs: 0.75rem;
+    /* typography */
+    --rh9-text-sm: 1rem;
+  }
+}
+/* component */
+.read-more {
+  opacity: 0;
+}
+
+.read-more--loaded {
+  opacity: 1;
+}
+
+.read-more__btn {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  color: hsl(var(--rh9-color-primary-hsl));
+  text-decoration: underline;
+}
+
+/* utility classes */
+.rh9-hide {
+  display: none !important;
+}
+
+.rh9-text-component :where(h1, h2, h3, h4) {
+  line-height: var(--rh9-heading-line-height, 1.2);
+  margin-top: calc(var(--rh9-space-md) * var(--rh9-space-multiplier, 1));
+  margin-bottom: calc(var(--rh9-space-sm) * var(--rh9-space-multiplier, 1));
+}
+
+.rh9-text-component :where(p, blockquote, ul li, ol li) {
+  line-height: var(--rh9-body-line-height, 1.4);
+}
+
+.rh9-text-component :where(ul, ol, p, blockquote, .rh9-text-component__block) {
+  margin-bottom: calc(var(--rh9-space-sm) * var(--rh9-space-multiplier, 1));
+}
+
+.rh9-text-component :where(ul, ol) {
+  padding-left: 1.25em;
+}
+
+.rh9-text-component ul :where(ul, ol), .rh9-text-component ol :where(ul, ol) {
+  padding-left: 1em;
+  margin-bottom: 0;
+}
+
+.rh9-text-component ul {
+  list-style-type: disc;
+}
+
+.rh9-text-component ol {
+  list-style-type: decimal;
+}
+
+.rh9-text-component img {
+  display: block;
+  margin: 0 auto;
+}
+
+.rh9-text-component figcaption {
+  margin-top: calc(var(--rh9-space-xs) * var(--rh9-space-multiplier, 1));
+  font-size: var(--rh9-text-sm);
+  text-align: center;
+}
+
+.rh9-text-component em {
+  font-style: italic;
+}
+
+.rh9-text-component strong {
+  font-weight: bold;
+}
+
+.rh9-text-component s {
+  text-decoration: line-through;
+}
+
+.rh9-text-component u {
+  text-decoration: underline;
+}
+
+.rh9-text-component mark {
+  background-color: hsla(var(--rh9-color-accent-hsl), 0.2);
+  color: inherit;
+}
+
+.rh9-text-component blockquote {
+  padding-left: 1em;
+  border-left: 4px solid hsl(var(--rh9-color-contrast-lower-hsl));
+  font-style: italic;
+}
+
+.rh9-text-component hr {
+  margin: calc(var(--rh9-space-md) * var(--rh9-space-multiplier, 1)) auto;
+  background: hsl(var(--rh9-color-contrast-lower-hsl));
+  height: 1px;
+}
+
+.rh9-text-component > *:first-child {
+  margin-top: 0;
+}
+
+.rh9-text-component > *:last-child {
+  margin-bottom: 0;
+}
+
+.rh9-text-component.rh9-line-height-xs {
+  --rh9-heading-line-height: 1;
+  --rh9-body-line-height: 1.1;
+}
+
+.rh9-text-component.rh9-line-height-sm {
+  --rh9-heading-line-height: 1.1;
+  --rh9-body-line-height: 1.2;
+}
+
+.rh9-text-component.rh9-line-height-md {
+  --rh9-heading-line-height: 1.15;
+  --rh9-body-line-height: 1.4;
+}
+
+.rh9-text-component.rh9-line-height-lg {
+  --rh9-heading-line-height: 1.22;
+  --rh9-body-line-height: 1.58;
+}
+
+.rh9-text-component.rh9-line-height-xl {
+  --rh9-heading-line-height: 1.3;
+  --rh9-body-line-height: 1.72;
+}
+
+/* --------------------------------
+
 File#: _1_scribble-text-decoration
 Title: Scribble Text Decoration
 Descr: A collection of animated scribble text decorations
@@ -2357,7 +2567,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@xs.scroll-fx--theme-transition,
-.scroll-fx\@xs.scroll-fx--theme-transition > * {
+  .scroll-fx\@xs.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -2368,7 +2578,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@sm.scroll-fx--theme-transition,
-.scroll-fx\@sm.scroll-fx--theme-transition > * {
+  .scroll-fx\@sm.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -2379,7 +2589,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@md.scroll-fx--theme-transition,
-.scroll-fx\@md.scroll-fx--theme-transition > * {
+  .scroll-fx\@md.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -2390,7 +2600,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@lg.scroll-fx--theme-transition,
-.scroll-fx\@lg.scroll-fx--theme-transition > * {
+  .scroll-fx\@lg.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }
@@ -2401,7 +2611,7 @@ Usage: codyhouse.co/license
     stroke-dashoffset: var(--scroll-fx-stroke-dashoffset) !important;
   }
   .scroll-fx\@xl.scroll-fx--theme-transition,
-.scroll-fx\@xl.scroll-fx--theme-transition > * {
+  .scroll-fx\@xl.scroll-fx--theme-transition > * {
     transition: 0.3s;
   }
 }

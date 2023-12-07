@@ -375,7 +375,7 @@ footer {
   }
 
   .footer-terms {
-    display: none; 
+    display: none;
     margin-top: 15px;
     span {
       opacity: .3;
@@ -401,3 +401,18 @@ footer {
 .hero--patents .leader { color: #777; }
 
 .hero--patents .leader { font-size: 1.3em;}
+
+
+
+.row-news {
+  background-color: rgb(83, 171, 200);
+
+  p { color: #fff; }
+
+  b { font-weight: 600; }
+
+  .read-more__btn {
+    color: #cccc66;
+    font-weight: 600; 
+  }
+}
