@@ -407,12 +407,26 @@ footer {
 .row-news {
   background-color: rgb(83, 171, 200);
 
-  p { color: #fff; }
+  p {
+    color: #fff;
+    img {
+      float: left;
+      margin: 0 30px 20px 0;
+      max-width: 230px;
+      border-radius: 10px;
+      border: solid 7px rgba(0,0,0,.1);
+
+      @media screen and (max-width: 500px) {
+        margin-bottom: 20px; 
+        max-width: 140px;
+      }
+    }
+  }
 
   b { font-weight: 600; }
 
   .read-more__btn {
     color: #cccc66;
-    font-weight: 600; 
+    font-weight: 600;
   }
 }
